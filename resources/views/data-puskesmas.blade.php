@@ -2,15 +2,15 @@
 @section('content')
     {{-- @dd($puskesmas) --}}
     <div class="px-16 pt-14 pb-5">
+
         <form method="get" action="/puskesmas">
             <div class="flex flex-row justify-center">
-                <input type="text" id="search"
-                    class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-700 focus:border-emerald-700 block w-96"
-                    placeholder="   Masukkan pencarian" required>
-                <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
-                    Search
-                </button>
+                <div class="group w-6/12 md:w-6/12 lg:w-6/12">
+                    <div class="relative flex items-center">
+                        <input id="8" type="text" class="peer relative h-10 w-full rounded-md bg-gray-50 pl-4 pr-20 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg" />
+                        <button class="absolute right-0 h-10 w-16 rounded-r-md bg-emerald-200 text-xs font-semibold text-white transition-all duration-200 ease-in-out group-focus-within:bg-emerald-400 group-focus-within:hover:bg-emerald-600">Send</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -25,20 +25,20 @@
             </thead>
             <tbody>
                 @php
-                    $i=1
+                    $i = 1;
                 @endphp
                 @foreach ($puskesmas as $pus)
-                <tr>
-                    <td class="border border-slate-700 text-center">{{ $i++ }}</td>
-                    <td class="border border-slate-700 px-3">{{ $pus->kabupaten_kota }}</td>
-                    <td class="border border-slate-700 text-center">{{ $pus->jumlah }}</td>
-                </tr>
+                    <tr>
+                        <td class="border border-slate-700 text-center">{{ $i++ }}</td>
+                        <td class="border border-slate-700 px-3">{{ $pus->kabupaten_kota }}</td>
+                        <td class="border border-slate-700 text-center">{{ $pus->jumlah }}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
     <hr>
-    <div class="flex justify-center">
+    <div class="flex justify-center mb-2">
         {{ $puskesmas->links() }}
     </div>
 @endsection

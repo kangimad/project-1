@@ -15,13 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('data-puskesmas', [
-//         'active' => 'puskesmas',
-//         'title' => 'Puskesmas',
-//         'puskesmas' => Puskesmas::all()
-//     ]);
-// });
+Route::get('/about-me', function () {
+    return view('about-me', [
+        'active' => 'about-me',
+        'title' => 'About Me'
+    ]);
+});
+Route::get('/rumah-sakit', function () {
+    return view('rumah-sakit', [
+        'active' => 'rumah-sakit',
+        'title' => 'Rumah Sakit'
+    ]);
+});
 
 Route::get('/', [PuskesmasController::class, 'index']);
 Route::get('/puskesmas', [PuskesmasController::class, 'index']);
