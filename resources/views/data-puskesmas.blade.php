@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 @php
-                    $i = ($puskesmas->currentPage() - 1) * $puskesmas->perPage() + 1;;
+                    $i = ($puskesmas->currentPage() - 1) * $puskesmas->perPage() + 1;
                 @endphp
                 @foreach ($puskesmas as $pus)
                     <tr>
