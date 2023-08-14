@@ -7,8 +7,10 @@
             <div class="flex flex-row justify-center">
                 <div class="group w-6/12 md:w-6/12 lg:w-6/12">
                     <div class="relative flex items-center">
-                        <input id="8" type="text" class="peer relative h-10 w-full rounded-md bg-gray-50 pl-4 pr-20 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg" />
-                        <button class="absolute right-0 h-10 w-16 rounded-r-md bg-emerald-200 text-xs font-semibold text-white transition-all duration-200 ease-in-out group-focus-within:bg-emerald-400 group-focus-within:hover:bg-emerald-600">Send</button>
+                        <input id="8" type="text" name="search"
+                            class="peer relative h-10 w-full rounded-md bg-gray-50 pl-4 pr-20 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg" />
+                        <button
+                            class="absolute right-0 h-10 w-16 rounded-r-md bg-emerald-200 text-xs font-semibold text-white transition-all duration-200 ease-in-out group-focus-within:bg-emerald-400 group-focus-within:hover:bg-emerald-600">Search</button>
                     </div>
                 </div>
             </div>
@@ -25,7 +27,7 @@
             </thead>
             <tbody>
                 @php
-                    $i = 1;
+                    $i = ($puskesmas->currentPage() - 1) * $puskesmas->perPage() + 1;;
                 @endphp
                 @foreach ($puskesmas as $pus)
                     <tr>
